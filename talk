@@ -16,10 +16,7 @@ En realidad era un juego 2D  y el codigo era basicamente el siguiente
 tomarApuestas()
 
 while(noHayGanador){
-  for(int i=0; i<caballos.length, i++){
-    moverCaballo(caballos[i])
-  }
-
+  moverCaballos()
   redibujar()
 }
 
@@ -36,12 +33,12 @@ Recuerdo que hubo dos cosas que me costaron mucho entender.
 Para mover los caballos necesitaba una forma de poder pasar por cada caballo y cambiarle su posicion. Necesitaba un FOR!!
 
 --------
-for(int i=0; i<caballos.length, i++){
+for(int i=0; i<caballos.length; i++){
     moverCaballo(caballos[i])
 }
 --------
 
-Cuando vi esto por primera vez, pensaba que la variable i tenia que llamarse i! Tarde mucho en entender estas lineas realmente.
+Cuando vi esto por primera vez, no estaba seguro si podia cambiarle el nombre a la variable i! Ni como se relacionaba cada una de las partes del for. Asi que por un tiempo segui usandolo como una receta.
 
 Con ruby hubiese sido un poco mas facil 
 
@@ -51,7 +48,9 @@ caballos.each { |caballo| moverCaballo(caballo) }
 
 --------
 
-Para cada caballo, movelo. Se parece bastante mas al ingles. 
+caballos.each moverCaballo y le paso el caballo.
+
+Para cada caballo, movelo. Se parece bastante mas al ingles. caballos es el mismo array del otro ejemplo simplemente es mucho mas intuitiva la forma de recorrerlo.
 
 
 Ya un poco mas canchero con todo esto de la programacion se me ocurrio leer las apuestas de un archivo. 
@@ -74,6 +73,8 @@ public void justReadMeAFilePlease(){
 }
 --------
 
+16 lineas para leer un archivo.
+
 Claramente esto lo copie en su momento y no entendí la mitad de las cosas. Excepciones, bufReader no se que!!
 
 Con ruby hubiese sido mas facil,
@@ -81,6 +82,8 @@ Con ruby hubiese sido mas facil,
 --------
 apuestas = File.open 'apuestas.txt'
 --------
+
+Simplemente File.open y el nombre del archivo.
 
 apuestas es un array y podria haber usado lo que aprendi con each para recorrerlo. 
 

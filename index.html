@@ -38,9 +38,7 @@
             <code class="language-java">
               tomarApuestas()
               while(noHayGanador){
-                for(int i=0; i < caballos.length, i++){
-                  moverCaballo(caballos[i])
-                }
+                moverCaballos()
                 redibujar()
               }
               mostrarGanador()
@@ -54,7 +52,7 @@
           <h2>Necesitaba un For!</h2>
           <pre>
             <code class="language-java">
-              for(int i=0; i< caballos.length, i++){
+              for(int i=0; i< caballos.length; i++){
                 moverCaballo(caballos[i])
               }
             </code>
@@ -77,23 +75,23 @@
   <div class="content">
     <h2>La maldición de los archivos</h2>
     <pre>
-      <code class="language-java">
-    public void justReadMeAFilePlease(){
-      BufferedReader buffReader = null;
-      try{
-          buffReader = new BufferedReader 
-                        (new FileReader("apuestas.txt"));
-          String apuesta = buffReader.readLine();
-          while(apuesta != null){
-              apuesta = buffReader.readLine();
-              tomarApuesta(apuesta)
-          }
-      }catch(IOException ioe){
-          ioe.printStackTrace();
-      }finally{
-        buffReader.close();
-      }
-    }
+      <code class="language-java line-numbers" data-src="plugins/line-numbers/prism-line-numbers.js">
+1    public void justReadMeAFilePlease(){
+2      BufferedReader buffReader = null;
+3      try{
+4          buffReader = new BufferedReader 
+5                        (new FileReader("apuestas.txt"));
+6          String apuesta = buffReader.readLine();
+7          while(apuesta != null){
+8              apuesta = buffReader.readLine();
+9              tomarApuesta(apuesta)
+10         }
+11      }catch(IOException ioe){
+12         ioe.printStackTrace();
+13      }finally{
+14        buffReader.close();
+15      }
+16     }
       </code>
     </pre>
   </div>
