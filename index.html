@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruby como primer lenguaje de progamación</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/prism.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    </head>
+    <body>
+    <article>
+      <section data-bespoke-state="start">
+        <div class="content">
+          <h1>Ruby como primer lenguaje de programación</h1>
+          <div class="byline">
+            <div class="classy">
+              por Alfredo Scoppa
+            </div>
+          </div>
+          <div class="profile">
+            <div class="rounded-image">
+              <img src="img/ascoppa.jpeg">
+            </div>
+            <h4>@ascoppa</h4>
+          </div>
+        </div>
+      </section>
+
+      <section data-bespoke-state="horserun">
+        <div class="content">
+        </div>
+      </section>
+
+      <section data-bespoke-state="code">
+        <div class="content">
+          <h2>Horse Run</h2>
+          <pre>
+            <code class="language-java">
+              tomarApuestas()
+              while(noHayGanador){
+                for(int i=0; i < caballos.length, i++){
+                  moverCaballo(caballos[i])
+                }
+                redibujar()
+              }
+              mostrarGanador()
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section data-bespoke-state="old-code">
+        <div class="content">
+          <h2>Necesitaba un For!</h2>
+          <pre>
+            <code class="language-java">
+              for(int i=0; i< caballos.length, i++){
+                moverCaballo(caballos[i])
+              }
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section data-bespoke-state="code">
+        <div class="content">
+          <h2>Ruby al rescate (1era parte)</h2>
+          <pre>
+            <code class="language-ruby">
+              caballos.each { |caballo| moverCaballo(caballo) }
+            </code>
+          </pre>
+        </div>
+      </section>
+      
+<section data-bespoke-state="old-code">
+  <div class="content">
+    <h2>La maldición de los archivos</h2>
+    <pre>
+      <code class="language-java">
+    public void justReadMeAFilePlease(){
+      BufferedReader buffReader = null;
+      try{
+          buffReader = new BufferedReader 
+                        (new FileReader("apuestas.txt"));
+          String apuesta = buffReader.readLine();
+          while(apuesta != null){
+              apuesta = buffReader.readLine();
+              tomarApuesta(apuesta)
+          }
+      }catch(IOException ioe){
+          ioe.printStackTrace();
+      }finally{
+        buffReader.close();
+      }
+    }
+      </code>
+    </pre>
+  </div>
+</section>
+
+      <section data-bespoke-state="code">
+        <div class="content">
+          <h2>Ruby al rescate (2da parte)</h2>
+          <pre>
+            <code class="language-ruby">
+             apuestas = File.open 'apuestas.txt'
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section id="end">
+        <div class="content">
+        </div>
+      </section>
+
+    </article>
+
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Tauri::latin', 'Alegreya:400italic:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+    <script src="js/bespoke.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/deck.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.bootstrap.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.xss.js"></script>
+    </body>
+</html>

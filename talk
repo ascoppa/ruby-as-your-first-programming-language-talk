@@ -1,0 +1,100 @@
+ Ruby como primer lenguaje de programación
+
+Mi nombre es alfredo scoppa y quiero contarles porque es una buena idea elegir ruby como primer lenguaje de programacion y para convencerlos me gustaria contarles una historia:
+
+Cuando estaba en la secundaria se me ocurrio hacer un juego, queria que mis amigos puedan participar y queria que hayan apuestas. 
+
+El resultado fue HorseRun
+
+Diapositiva de caballitos
+
+
+En realidad era un juego 2D  y el codigo era basicamente el siguiente
+
+
+--------
+tomarApuestas()
+
+while(noHayGanador){
+  for(int i=0; i<caballos.length, i++){
+    moverCaballo(caballos[i])
+  }
+
+  redibujar()
+}
+
+mostrarGanador()
+
+--------
+
+Primero se tomaban las apuestas y mientras no haya un ganador se actualizaba la posicion de cada caballo y despues se redibujaba la pantalla. 
+
+
+Recuerdo que hubo dos cosas que me costaron mucho entender.
+
+
+Para mover los caballos necesitaba una forma de poder pasar por cada caballo y cambiarle su posicion. Necesitaba un FOR!!
+
+--------
+for(int i=0; i<caballos.length, i++){
+    moverCaballo(caballos[i])
+}
+--------
+
+Cuando vi esto por primera vez, pensaba que la variable i tenia que llamarse i! Tarde mucho en entender estas lineas realmente.
+
+Con ruby hubiese sido un poco mas facil 
+
+
+--------
+caballos.each { |caballo| moverCaballo(caballo) }
+
+--------
+
+Para cada caballo, movelo. Se parece bastante mas al ingles. 
+
+
+Ya un poco mas canchero con todo esto de la programacion se me ocurrio leer las apuestas de un archivo. 
+
+--------
+public void justReadMeAFilePlease(){
+    BufferedReader buffReader = null;
+    try{
+        buffReader = new BufferedReader (new FileReader("apuestas.txt"));
+        String apuesta = buffReader.readLine();
+        while(apuesta != null){
+            apuesta = buffReader.readLine();
+            tomarApuesta(apuesta)
+        }
+    }catch(IOException ioe){
+        ioe.printStackTrace();
+    }finally{
+      buffReader.close();
+    }
+}
+--------
+
+Claramente esto lo copie en su momento y no entendí la mitad de las cosas. Excepciones, bufReader no se que!!
+
+Con ruby hubiese sido mas facil,
+
+--------
+apuestas = File.open 'apuestas.txt'
+--------
+
+apuestas es un array y podria haber usado lo que aprendi con each para recorrerlo. 
+
+Esto me hizo reflexionar sobre como en muchos  otros lenguajes se resuelven las cosas usando tipos especializados y en cambio en ruby se opta por tipos basicos como arrays y hashes.
+
+Además ruby es
+
+- genial para aprender POO!
+- Tiene la REPL (Abrir una terminal y probar codigo)
+- Muchisimo contenido online
+
+Treehouse.com
+Codeschool.com
+Lynda.com
+
+
+Gracias
